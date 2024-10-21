@@ -62,7 +62,9 @@ const AddFirm = () => {
         },
         body:formData
        });
+
        const data=await response.json()
+
        if(response.ok){
         console.log(data);
         setFirmName("");
@@ -72,10 +74,10 @@ const AddFirm = () => {
         setRegion([]);
         setFile(null);
         alert("Restaurant added succesfully");
-       }else if(data.message === "vendor can have only one firm"){
-        alert("Firm Exists 😊. Only  1 firm can be added")
-       }else{
-        alert('Failed to add firm')
+       } else if(data.message === "vendor can have only one firm"){
+         alert("Firm Exists 😊. Only  1 firm can be added")
+       } else{
+         alert('Failed to add firm')
        }
 
        console.log("this is firm id:",data.firmId)
