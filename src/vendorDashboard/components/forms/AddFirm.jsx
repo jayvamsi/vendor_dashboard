@@ -80,12 +80,16 @@ const AddFirm = () => {
 
        console.log("this is firm id:",data.firmId)
        const mango=data.firmId;
+       const vendorRestuarant = data.vendorFirmName
 
        localStorage.setItem('firmId',mango)
+       localStorage.setItem('firmName', vendorRestuarant)
+       window.location.reload()
 
 
     } catch (error) {
       console.error("failed to add restaurant");
+      alert("failed at add reataurant")
     }
   }
 
